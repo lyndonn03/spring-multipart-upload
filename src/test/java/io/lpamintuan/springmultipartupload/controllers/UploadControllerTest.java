@@ -10,7 +10,6 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.mockito.ArgumentMatchers.any;
@@ -46,17 +45,15 @@ public class UploadControllerTest {
     }
 
     @Test
-    @Disabled
-    public void uploadShouldReturnErrorIfMaxFilesizeExceeded() throws Exception {
+    public void uploadShouldReturnErrorIfMaxFilesizeExceedsFiveMB() throws Exception {
 
-        byte[] filebyte = new byte[1024 * 1024 * 10];
+        byte[] filebyte = new byte[6291456];
         MockMultipartFile mockFile = new MockMultipartFile("file",
                 "hello.txt", MediaType.MULTIPART_FORM_DATA_VALUE, filebyte);
 
         mockMvc.perform(multipart("/upload").file(mockFile))
                 .andExpect(status().isBadRequest())
-                .andExpect(jsonPath("$.message").value("Error uploading file. Filesize exceeded."))
-                .andExpect(jsonPath("$.fileName").value(mockFile.getOriginalFilename()));
+                .andExpect(jsonPath("$.error").value("File size exceeded."));
 
         verify(uploadService, never()).processUploadFile(any());
 
