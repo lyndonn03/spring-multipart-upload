@@ -1,6 +1,0 @@
-io/lpamintuan/springmultipartupload/SpringMultipartUploadApplication.class
-io/lpamintuan/springmultipartupload/services/UploadService.class
-io/lpamintuan/springmultipartupload/entities/UploadFileDetails.class
-io/lpamintuan/springmultipartupload/controllers/UploadControllerAdvice.class
-io/lpamintuan/springmultipartupload/repositories/UploadFileRepository.class
-io/lpamintuan/springmultipartupload/controllers/UploadController.class
