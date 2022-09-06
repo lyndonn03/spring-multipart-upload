@@ -1,0 +1,6 @@
+/usr/src/app/src/main/java/io/lpamintuan/springmultipartupload/repositories/UploadFileRepository.java
+/usr/src/app/src/main/java/io/lpamintuan/springmultipartupload/entities/UploadFileDetails.java
+/usr/src/app/src/main/java/io/lpamintuan/springmultipartupload/controllers/UploadControllerAdvice.java
+/usr/src/app/src/main/java/io/lpamintuan/springmultipartupload/controllers/UploadController.java
+/usr/src/app/src/main/java/io/lpamintuan/springmultipartupload/SpringMultipartUploadApplication.java
+/usr/src/app/src/main/java/io/lpamintuan/springmultipartupload/services/UploadService.java

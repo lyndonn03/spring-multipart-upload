@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+  app-maven:
+    image: maven:3.8.6-eclipse-temurin-11-alpine
+    working_dir: /usr/src/app
+    ports:
+      - '8080:8080'
+    environment:
+      - DB_USER=postgres
+      - DB_PASSWORD=devpassdb
+      - DB_URL=jdbc:postgresql://postgres:5432/devdb
+      - PROFILE=dev
+    command: mvn spring-boot:run
+    volumes:
+      - .:/usr/src/app
+      - app-maven:/root/.m2
+    networks:
+      - appnet
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:14.5
+    volumes:
+      - db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=devpassdb
+      - POSTGRES_DB=devdb
+    networks:
+      - appnet
+    
+
+networks:
+  appnet: {}
+
+volumes:
+  app-maven: {}
+  db: {}

@@ -1,0 +1,4 @@
+/usr/src/app/src/test/java/io/lpamintuan/springmultipartupload/controllers/UploadControllerTest.java
+/usr/src/app/src/test/java/io/lpamintuan/springmultipartupload/SpringMultipartUploadApplicationTests.java
+/usr/src/app/src/test/java/io/lpamintuan/springmultipartupload/PostGreSQLTestContainer.java
+/usr/src/app/src/test/java/io/lpamintuan/springmultipartupload/services/UploadServiceTest.java
